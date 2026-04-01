@@ -117,7 +117,9 @@ func convert(value float64, from, to string, units map[string]float64) (float64,
 }
 
 // formatValue formats a float64 with the given number of significant digits.
-// Uses x10^n scientific notation for very large or very small values.
+// Uses ×10^n scientific notation for very large or very small values.
+// %g may also switch to scientific notation for mid-range values depending on
+// precision; those are normalised to ×10^n as well for consistent output.
 func formatValue(f float64, precision int) string {
 	if f == 0 {
 		return "0"
@@ -129,7 +131,13 @@ func formatValue(f float64, precision int) string {
 		mantissaStr := fmt.Sprintf("%.*g", precision, mantissa)
 		return fmt.Sprintf("%s\u00d710^%d", mantissaStr, exp)
 	}
-	return fmt.Sprintf("%.*g", precision, f)
+	s := fmt.Sprintf("%.*g", precision, f)
+	// %g uses its own scientific notation when exponent >= precision; convert it.
+	if i := strings.IndexByte(s, 'e'); i >= 0 {
+		exp, _ := strconv.Atoi(s[i+1:])
+		return fmt.Sprintf("%s\u00d710^%d", s[:i], exp)
+	}
+	return s
 }
 
 func printGeneralHelp() {
