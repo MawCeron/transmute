@@ -23,3 +23,16 @@ Temperature is a special case because scales use additive offsets in addition to
 ## Notes
 
 All conversions route through Kelvin internally. Precision near absolute zero should be interpreted carefully, as rounding in extreme Fahrenheit or Delisle values can introduce small errors.
+
+## Units
+
+| Abbreviation | Scale | Freezing point | Boiling point | Notes |
+|---|---|---|---|---|
+| k | Kelvin | 273.15 K | 373.15 K | SI absolute scale; no negatives in nature |
+| c | Celsius | 0 °C | 100 °C | Defined relative to Kelvin |
+| f | Fahrenheit | 32 °F | 212 °F | US customary scale |
+| r | Rankine | 491.67 R | 671.67 R | Absolute scale, Fahrenheit-sized degrees |
+| de | Delisle | 150 °De | 0 °De | Inverted scale; larger = colder |
+| n | Newton | 0 °N | 33 °N | Proposed by Isaac Newton |
+| re | Réaumur | 0 °Ré | 80 °Ré | Common in Europe before Celsius |
+| ro | Rømer | 7.5 °Rø | 60 °Rø | First practical thermometer scale, c. 1701 |
