@@ -30,5 +30,10 @@ func convertTemperature(value float64, from, to string) (float64, error) {
 	if !ok {
 		return 0, fmt.Errorf("unknown unit %q, try --list to see available units", to)
 	}
+	kelvin := src.toK(value)
+	if kelvin < 0 {
+		return 0, fmt.Errorf("result is below absolute zero — physically impossible, much like my ex's heart...")
+	}
 	return dst.fromK(src.toK(value)), nil
+
 }
