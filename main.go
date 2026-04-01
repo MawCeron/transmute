@@ -138,7 +138,7 @@ func printGeneralHelp() {
 		cats = append(cats, k)
 	}
 	sort.Strings(cats)
-	fmt.Fprintln(os.Stderr, `Usage: convert [flags] <value> <from> <to>
+	fmt.Fprintln(os.Stderr, `Usage: transmute [flags] <value> <from> <to>
 
 Flags:
   -c <category>  Unit category (default: distance)
@@ -150,31 +150,31 @@ Categories:
   `+strings.Join(cats, ", ")+`
 
 Examples:
-  convert 10 km mi
-  convert -c weight 70 kg lb
-  convert -c temperature 100 c f
-  convert -c distance --list
-  convert -v -p 6 -c energy 1 tnt j`)
+  transmute 10 km mi
+  transmute -c weight 70 kg lb
+  transmute -c temperature 100 c f
+  transmute -c distance --list
+  transmute -v -p 6 -c energy 1 tnt j`)
 }
 
 func printCategoryHelp(cat string) {
 	examples := map[string]string{
-		"distance":    "  convert 10 km mi\n  convert 1 ly au\n  convert 100 ft m",
-		"weight":      "  convert 70 kg lb\n  convert 1 t kg\n  convert 16 oz lb",
-		"volume":      "  convert 1 gal l\n  convert 500 ml floz\n  convert 1 m3 l",
-		"temperature": "  convert 100 c f\n  convert 373.15 k c\n  convert 32 f c",
-		"velocity":    "  convert 100 kmh mps\n  convert 1 c kmh\n  convert 340 mps kmh",
-		"area":        "  convert 1 km2 mi2\n  convert 100 ha acre\n  convert 1 m2 ft2",
-		"pressure":    "  convert 1 atm pa\n  convert 14.7 psi pa\n  convert 1 bar atm",
-		"energy":      "  convert 1 kwh j\n  convert 1 kcal j\n  convert 1 ev j",
-		"data":        "  convert 1 gb mb\n  convert 1024 mib gib\n  convert 8 b bit",
-		"time":        "  convert 3600 s h\n  convert 1 y d\n  convert 1000 ms s",
+		"distance":    "  transmute 10 km mi\n  transmute 1 ly au\n  transmute 100 ft m",
+		"weight":      "  transmute 70 kg lb\n  transmute 1 t kg\n  transmute 16 oz lb",
+		"volume":      "  transmute 1 gal l\n  transmute 500 ml floz\n  transmute 1 m3 l",
+		"temperature": "  transmute 100 c f\n  transmute 373.15 k c\n  transmute 32 f c",
+		"velocity":    "  transmute 100 kmh mps\n  transmute 1 c kmh\n  transmute 340 mps kmh",
+		"area":        "  transmute 1 km2 mi2\n  transmute 100 ha acre\n  transmute 1 m2 ft2",
+		"pressure":    "  transmute 1 atm pa\n  transmute 14.7 psi pa\n  transmute 1 bar atm",
+		"energy":      "  transmute 1 kwh j\n  transmute 1 kcal j\n  transmute 1 ev j",
+		"data":        "  transmute 1 gb mb\n  transmute 1024 mib gib\n  transmute 8 b bit",
+		"time":        "  transmute 3600 s h\n  transmute 1 y d\n  transmute 1000 ms s",
 	}
 	ex := examples[cat]
 	if ex == "" {
-		ex = "  convert -c " + cat + " <value> <from> <to>"
+		ex = "  transmute -c " + cat + " <value> <from> <to>"
 	}
-	fmt.Fprintf(os.Stderr, "Usage: convert -c %s <value> <from> <to>\n\nExamples:\n%s\n\nUse --list to see available units.\n", cat, ex)
+	fmt.Fprintf(os.Stderr, "Usage: transmute -c %s <value> <from> <to>\n\nExamples:\n%s\n\nUse --list to see available units.\n", cat, ex)
 }
 
 func printList(category string) {
