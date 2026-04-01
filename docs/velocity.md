@@ -21,3 +21,19 @@ Mach (mach) is the speed of sound at sea level at 15 °C, approximately 340.29 m
 ## Biological and Geological Speeds
 
 Biological speeds range across many orders of magnitude. A cheetah reaches about 30 m/s in a sprint. For comparison, continental drift rates — the movement of tectonic plates — are typically measured in centimeters per year, far below anything detectable in everyday experience. Snail locomotion, often cited in discussions of slow movement, sits around 0.013 m/s, which is about 47 m/h. These extremes illustrate how broad the velocity scale truly is.
+
+## Units
+
+| Abbreviation | Unit | Notes |
+|---|---|---|
+| mps | Meters per second | SI base unit |
+| kmh | Kilometers per hour | Road speed standard in most countries |
+| kph | Kilometers per hour | Alias for kmh |
+| mph | Miles per hour | Road speed in US and UK |
+| fps | Feet per second | Ballistics and engineering |
+| fpm | Feet per minute | |
+| ips | Inches per second | |
+| kn | Knot | One nautical mile per hour (~1.852 km/h) |
+| mach | Mach | Speed of sound at sea level, 15 °C (~340 m/s) |
+| c | Speed of light | Exactly 299,792,458 m/s in vacuum |
+| kms | Kilometers per second | Stellar and spacecraft velocities |
