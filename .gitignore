@@ -30,3 +30,8 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+transmute
+
+meme_units.json
+encode_meme.py
